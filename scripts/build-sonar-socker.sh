@@ -8,7 +8,7 @@ docker run --name pgsonar -e POSTGRES_USER=sonar -e POSTGRES_PASSWORD=secret -d 
 #docker run --name sonar-postgres -e POSTGRES_USER=sonar -e POSTGRES_PASSWORD=secret -d -p 5432:5432 --net bsa-network postgres
 #docker run --name sonar-postgres -e POSTGRES_USER=sonar -e POSTGRES_PASSWORD=secret -d -p 5432:5432 -e VIRTUAL_HOST=pgsonar postgres
 
-DOCKER_FOLDER="$REPOS_HOME/sonar-docker-bsa"
+DOCKER_FOLDER="$REPOS_HOME/sonarqpostgre"
 
 cd $DOCKER_FOLDER
 
