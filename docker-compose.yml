@@ -1,19 +1,23 @@
-version: '2'
+version: "2"
 
 services:
   pgsonar:
    build: postgre/
    ports:
     - 5432:5432
-   environment:
-    POSTGRES_USER: "sonar"
-    POSTGRES_PASSWORD: "secret"
+   environment: 
+    POSTGRES_USER: &postgre_user "sonar"
+    POSTGRES_PASSWORD: &postgre_pass "secret"
    networks:
     - sonar-network
   sonarqpostgre:
    build: sonar/
    ports:
     - 9000:9000
+   environment:
+    SONARQUBE_JDBC_URL: "jdbc:postgresql://pgsonar:5432/sonar"
+    SONARQUBE_JDBC_PASSWORD: *postgre_pass
+    SONARQUBE_JDBC_USERNAME: *postgre_user
    networks:
     - sonar-network
    depends_on:
