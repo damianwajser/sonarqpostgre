@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  pgsonar:
+   build: postgre/
+   ports:
+    - 5432:5432
+   environment:
+    POSTGRES_USER: "sonar"
+    POSTGRES_PASSWORD: "secret"
+   networks:
+    - sonar-network
+  sonarqpostgre:
+   build: sonar/
+   ports:
+    - 9000:9000
+   networks:
+    - sonar-network
+   depends_on:
+    - pgsonar
+networks:
+  sonar-network:
+    driver: bridge
