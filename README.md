@@ -30,6 +30,9 @@ en el settings.xml:
 	</activeProfiles>
   ```
 ## to build run
+clonar el proyecto y dentro del mismo: </br>
 docker-compose build </br>
 docker-compose up -d </br>
 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true -DskipTests=false sonar:sonar
+</br>
+Entrar a http://localhost:9000
