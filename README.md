@@ -32,7 +32,8 @@ en el settings.xml:
 ## to build run
 clonar el proyecto y dentro del mismo: </br>
 docker-compose build </br>
-docker-compose up -d </br>
+docker-compose up -d </br></br>
+## ahora en el proyecto que se quiera analizar:
 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true -DskipTests=false sonar:sonar
 </br>
 Entrar a http://localhost:9000
