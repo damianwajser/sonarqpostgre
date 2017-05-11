@@ -70,5 +70,5 @@ En el pom.xml:
             </plugin>
 	    </plugins>
 	    </build>
-``` 
-# correr mvn clean install sonar:sonar
+```
+Correr mvn clean install sonar:sonar
